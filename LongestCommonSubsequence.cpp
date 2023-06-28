@@ -26,20 +26,7 @@ int solve(string &str1, string &str2, int i, int j, vector<vector<int>>&dp)
 int longestCommonSubsequence(string text1, string text2) {
 
     vector<vector<int>>dp(text1.length(), vector<int>(text2.length(), -1));
-
-    int ans = solve(text1, text2, text1.length()-1, text2.length()-1, dp);
-
-    for(int i=0; i<dp.size(); i++)
-    {
-        for(int j=0; j<dp[i].size(); j++)
-        {
-            cout<<dp[i][j]<<" ";
-        }
-
-        cout<<endl;
-    }
-
-    return ans;
+    return solve(text1, text2, text1.length()-1, text2.length()-1, dp);
 }
 
 int main()
