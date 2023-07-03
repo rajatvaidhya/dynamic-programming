@@ -15,11 +15,11 @@ int lengthOfLIS(vector<int>& arr) {
         {
             if(arr[j]<arr[i])
             {
-                maxlen = max(maxlen, dp[j]);
+                maxlen = max(maxlen, dp[j]+1);
             }
         }
         
-        dp[i] = maxlen+1;
+        dp[i] = maxlen;
     }
     
     int ans = 0;
